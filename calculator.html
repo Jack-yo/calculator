@@ -1,0 +1,238 @@
+<<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>网页计算器</title>
+        
+        
+<script>
+    
+         window.onload=function(){
+             
+                  var webcalculator=document.getElementById("webcalculator");
+                  
+                  
+                   var screen=document.getElementById("screen");
+                    
+                    
+      webcalculator.onclick=function(c){
+                         
+                        
+                         
+               var input=c.toElement;
+                         
+                         if(input.type=="button"){
+                             
+                             if(input.value=="="){
+                                 
+                                                     try{
+                                     
+                                                                     screen.innerHTML/*screen.value*/=eval(screen.innerHTML/*screen.value*/);
+                                                     }
+                                 
+                                                      catch(ex){
+                                         
+                                                                         screen.innerHTML/*screen.value*/="Error";
+                                    }
+                             }
+                             
+                              else if(input.value=="Back"){
+                                   
+                                                                    screen.innerHTML/*screen.value*/=/*screen.value.*/screen.innerHTML.replace(/.$/,'');
+                               } 
+                              
+                         
+                               else if(input.value=="C"){
+                                   
+                                                                               screen.innerHTML/*screen.value*/="";
+                                   
+                                   
+                               }
+                               
+                               
+                               
+                             
+                                 else {
+                                     
+                                                                         screen.innerHTML/*screen.value*/+=input.value;
+                                 }
+                         }
+                         
+                         
+                         
+                         
+                     }
+                     
+
+      
+             
+
+ window.onkeypress=function(k){
+                 
+
+
+if(k.charCode==42||k.charCode==45||k.charCode==41||k.charCode==40||k.charCode==43||k.charCode==47)screen.innerHTML+=k.key     ;
+                
+    else if(k.charCode>=48&&k.charCode<57)       screen.innerHTML+=k.key;
+                
+    else if(k.charCode==61){
+                               
+                    
+                    
+                             try{
+                                              
+                                                screen.innerHTML/* screen.value*/=eval(screen.innerHTML/*screen.value*/);
+                                          }
+                    
+                             catch(ex){
+                                          
+                                                screen.innerHTML             /*  screen.value*/="Error";
+                                      }
+                                      
+                                
+                             
+                           }
+                
+    
+
+	else{
+                        screen.value=screen.value.replace(/.$/,'');
+                 }
+             
+        }}
+          
+           
+ 
+         
+         
+
+    
+</script>
+
+
+<style>
+
+
+#webcalculator{
+
+                width:220px;
+                
+                height:320px;
+                
+                margin:   5px auto;
+                
+                border:1px    solid #666;}
+                
+                
+input[type="button"]{
+    
+          
+          font-weight:bold;
+          
+         margin:5px;
+          
+          font-size:20px;
+          
+           height:40px;
+    
+           border:1px soild #666;
+    
+            width:40px;
+            
+           
+           
+           
+           
+           
+}
+    
+    
+     
+     
+  #screen{
+       
+            width:208px;
+            
+            margin:5px; 
+            
+            height:50px;
+            
+            display:inline-block;
+            
+            font-size:30px;
+            
+            overflow:scroll;                               /*  */
+            
+            border:1px solid #666;
+            
+            background:#CCCC99;  
+            
+             
+            
+             
+           
+           
+ }
+     #screen::-webkit-scrollbar {display:none}/**//*  */
+     
+     
+          
+                
+
+
+</style>
+    
+        
+        
+    </head>
+    
+    
+
+
+    
+    <body>
+        
+           <div id="webcalculator">
+        
+  
+<!--      <input id="screen" />oninput="value=value.replace(/[^\d]/g,'')"-->
+        
+        
+        <p id="screen"></p>
+      
+ 
+        
+            
+            <input type="button" value="(" /> 
+            
+            <input type="button" value=")" />
+            
+            <input type="button" value="C" />
+            
+            <input type="button" style=" font-size:12px;" value="Back"/>
+            
+             
+
+            <input type="button" value="1" />
+            <input type="button" value="2" />
+            <input type="button" value="3" />
+            <input type="button" value="/" />
+            <input type="button" value="4" />
+            <input type="button" value="5" />
+            <input type="button" value="6" />
+            <input type="button" value="*" />
+            <input type="button" value="7" />
+            <input type="button" value="8" />
+            <input type="button" value="9" />
+            <input type="button" value="-" />
+            <input type="button" value="0" />
+            <input type="button" value="." />
+            <input type="button" value="=" />
+            <input type="button" value="+" />
+            
+           </div>
+      
+        
+
+    </body>
+</html>
